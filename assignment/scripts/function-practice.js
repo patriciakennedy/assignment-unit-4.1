@@ -69,30 +69,38 @@ console.log(isPositive(-1));
 
 
 
-
-
-
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 
-let courses = ['HTML', 'CSS', 'JavaScript', 'React', 'SQL'];
-
 function getLast(array) {
-
+  if (array.length === 0) {
+    return undefined;
+  }
+  return array[array.length -1];
 }
 
-
-
-
-
+//testing different logs - PK
+console.log(getLast([5, 1, 3, 6, 3]));
+console.log(getLast([]));
+console.log(getLast([8, 2, 1, 1, 0, 'a']));
 
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
-
+  //loop through the items in the array
+    for (let i = 0; i < array.length; i++){
+  
+   //check if an item is one of the array elements/items
+   if (array[i] === value) {
+    return true;
+   } 
+  }
+   return false;
 }
+
+console.log(find(2, [0, 3, 9, 2, 1]));//checks it "2" is an item in the array
 
 // ----------------------
 // Stretch Goals
@@ -100,8 +108,20 @@ function find(value, array) {
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  for (let i = 0; i < 1; i++){
+    if (string[i] === letter) {
+      return true;
+    }
+  }
+  return false;
 }
+
+//testing for the first letter - PK
+console.log(isFirstLetter('k', 'javascript'));
+console.log(isFirstLetter('j', 'javascript'));
+
+
+//will add these to my practice code library
 
 
 // 9. Function to return the sum of all numbers in an array
